@@ -1,0 +1,22 @@
+{
+  "name": "vfo_stories",
+  "version": "1.0.0",
+  "description": "Illustrated stories with audio",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "dev": "gulp watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Freire Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.70.0"
+  },
+  "dependencies": {
+    "gulp-uglify": "^3.0.2"
+  }
+}
