@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Short+Stack&display=swap"
+        rel="stylesheet">
     <title>VFO Stories</title>
     <link rel="stylesheet" href="dist/css/main.css">
 </head>
+
 <body>
-    <h1>VFO Stories</h1>
+    <div class="wrapper">
+        <header class="navbar">
+            <nav class="navbar__container">
+                <a href="#"><img src="./dist/images/vfo-sketch.webp" alt="VFO logo"></a>
+                <ul class="menu">
+                    <li>
+                        <a href="#">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Links
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section class="hero">
+            <img class="welcome fadeIn" src="./dist/images/welcome.svg">
+            <div class="container">
+                <div id="scene">
+                    <div class="layer" data-depth="0.1">
+                        <img id="layer1" src="./dist/images/layer1.webp">
+                    </div>
+                    <div class="layer" data-depth="0.7">
+                        <img id="layer2" src="./dist/images/layer2.webp">
+                    </div>
+                    <div class="layer" data-depth="0.3">
+                        <img id="layer3" src="./dist/images/layer3.webp">
+                    </div>
+                    <div class="layer" data-depth="0.3">
+                        <img id="layer4" src="./dist/images/layer4.webp">
+                    </div>
+                    <div class="layer" data-depth="0.2">
+                        <img id="layer5" src="./dist/images/layer5.webp">
+                    </div>
+                    <div class="layer" data-depth-x="1">
+                        <img id="layer6" src="./dist/images/layer6.webp">
+                    </div>
+                    <div class="layer" data-depth-x="0.8">
+                        <img id="layer7" src="./dist/images/layer7.webp">
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <script src="./dist/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene, {
+            relativeInput: true
+        });
+    </script>
 </body>
+
 </html>

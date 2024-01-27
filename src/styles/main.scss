@@ -1,5 +1,27 @@
+@use 'header';
+@use 'hero';
+@use 'animation';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
 }
