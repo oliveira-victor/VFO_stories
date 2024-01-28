@@ -1,6 +1,8 @@
 @use 'header';
 @use 'hero';
 @use 'animation';
+@use 'storiesList';
+@use 'fonts';
 
 * {
     margin: 0;
@@ -9,7 +11,7 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: fonts.$text;
 }
 
 a {
