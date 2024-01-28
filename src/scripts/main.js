@@ -1,8 +1,9 @@
 // welcome
 
 const welcome = document.querySelector('.welcome');
+const author = document.querySelector('.author');
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     setTimeout(() => {
         welcome.style.display = "block";
 
@@ -11,6 +12,7 @@ window.addEventListener('load', function() {
 
             setTimeout(() => {
                 welcome.style.display = "none";
+                author.style.display = "block"
             }, 2000)
         }, 5000);
     }, 1000);

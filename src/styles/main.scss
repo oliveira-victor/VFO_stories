@@ -3,6 +3,7 @@
 @use 'animation';
 @use 'storiesList';
 @use 'fonts';
+@use 'colors';
 
 * {
     margin: 0;
@@ -10,8 +11,22 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: fonts.$text;
+}
+
+h1, h2, h3, h4 {
+    font-family: fonts.$title;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 34px;
+    color: colors.$mainColor;
 }
 
 a {
@@ -26,4 +41,10 @@ li {
     max-width: 1920px;
     margin: 0 auto;
     position: relative;
+}
+
+.main-container {
+    max-width: 1024px;
+    width: 90%;
+    margin: 0 auto;
 }
