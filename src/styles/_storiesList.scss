@@ -2,4 +2,88 @@
     width: 100%;
     min-height: 100vh;
     padding-top: 100px;
+
+    .cards-container {
+        width: 100%;
+        padding: 80px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+
+        .card {
+            width: 350px;
+            height: 600px;
+            border-radius: 6px;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            background-size: cover;
+            background-position: center;
+
+            .card-content {
+                height: 140px;
+                background-color: #fff;
+                padding: 16px 20px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                border-radius: 0 0 6px 6px;
+                transition: height 1.2s;
+
+                h3 {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+
+                .long {
+                    height: 90%;
+                    display: none;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+
+                    .card-btn {
+                        width: 100%;
+                        padding: 10px 0;
+                        display: block;
+                        margin: 0 auto;
+                        margin-top: 20px;
+                        background-color: #4287f5;
+                        color: #fff;
+                        border: none;
+                        border-radius: 6px;
+                        font-size: 20px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &:hover .card-content {
+                height: 80%;
+            }
+            
+            &:hover .long {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            &:hover .short {
+                display: none;
+            }
+        }
+    }
+}
+
+#img1 {
+    background-image: url('https://vfostudio.vercel.app/dist/images/portfolio/a02+.jpg');
+}
+
+#img2 {
+    background-image: url('https://vfostudio.vercel.app/dist/images/portfolio/a03+.jpg');
+}
+
+#img3 {
+    background-image: url('https://vfostudio.vercel.app/dist/images/portfolio/a04+.jpg');
 }
