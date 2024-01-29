@@ -20,9 +20,7 @@ window.addEventListener('load', function () {
 
 // header
 
-/* const header = document.getElementsByClassName('navbar'); */
-
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const currentPosition = window.scrollY
 
     if (currentPosition < 60) {
@@ -41,3 +39,46 @@ function originalHeader() {
     const header = document.querySelector('header');
     header.classList.remove('active');
 }
+
+// API
+
+function displayCards(stories) {
+    const storyListElement = document.querySelector('.cards-container')
+
+    stories.forEach(story => {
+
+        const cardStructure = `
+            <li class="card" style="background-image: url('${story.image}');">
+                <div class="card-content">
+                    <h3 id="cardTitle">${story.title}</h3>
+                    <div class="short">
+                        ${createSummary()}
+                        <span class="read-more">read more</span>
+                    </div>
+                    <div class="long">
+                        <p id="cardText">
+                            ${story.text}
+                        </p>
+                        <button class="card-btn">Open</button>
+                    </div>
+                </div>
+            </li>
+        `
+
+        function createSummary() {
+            return story.text.slice(0, 90) + '...'
+        }
+
+        storyListElement.insertAdjacentHTML('beforeend', cardStructure)
+    })
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("https://api-storage-stories.vercel.app/stories")
+        .then(res => res.json())
+        .then(data => {
+            displayCards(data)
+        })
+        .catch(error => console.error('Error fetching the stories', error));
+});
+
