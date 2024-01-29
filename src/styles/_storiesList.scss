@@ -1,3 +1,5 @@
+@use 'fonts';
+
 .stories-list {
     width: 100%;
     min-height: 100vh;
@@ -54,6 +56,7 @@
                         color: #fff;
                         border: none;
                         border-radius: 6px;
+                        font-family: fonts.$title;
                         font-size: 20px;
                         text-transform: uppercase;
                         cursor: pointer;
