@@ -59,7 +59,6 @@
         .story-content {
             width: 100%;
             padding: 20px;
-            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -88,6 +87,7 @@
                 .story-title {
                     font-size: 30px;
                     margin-bottom: 20px;
+                    text-align: center;
                 }
             }
 
@@ -162,14 +162,21 @@
             }
 
             .story-content {
-                height: 80%;
+                height: 100%;
 
                 .story {
                     line-height: 1.4;
-                    height: 100%;
-                    margin-top: 24px;
+                    margin-top: 0;
+                    flex-grow: 1;
+                    height: 10px;
+                }
+
+                .audio-player {
+                    width: 100%;
+                    gap: 10px;
                 }
             }
         }
     }
 }
+
