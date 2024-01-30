@@ -22,7 +22,7 @@
         background-color: #fff;
         z-index: 12;
         max-width: 1024px;
-        width: 100%;
+        width: 94%;
         height: 600px;
         display: flex;
         border-radius: 20px;
@@ -65,15 +65,17 @@
             justify-content: space-between;
             gap: 20px;
 
-            #custom-scrollbar::-webkit-scrollbar {
-                width: 12px;
-                background-color: #F5F5F5;
-            }
-
-            #custom-scrollbar::-webkit-scrollbar-thumb {
-                border-radius: 10px;
-                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-                background-color: #555;
+            @media (min-width: 768px) {
+                #custom-scrollbar::-webkit-scrollbar {
+                    width: 12px;
+                    background-color: #F5F5F5;
+                }
+    
+                #custom-scrollbar::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+                    background-color: #555;
+                }
             }
 
             .story {
@@ -86,6 +88,48 @@
                 .story-title {
                     font-size: 30px;
                     margin-bottom: 20px;
+                }
+            }
+
+            .audio-player {
+                width: 70%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+
+                .sound-icon {
+                    width: 34px;
+                    cursor: pointer;
+                    transition: all .2s ease;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                    }
+                }
+
+                .slider-container {
+                    max-width: 300px;
+                    width: 100%;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    .slider {
+                        -webkit-appearance: none;
+                        width: 100%;
+                        height: 6px;
+                        background-color: #555;
+                        border-radius: 4px;
+                        cursor: pointer;
+
+                        &::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            background-color: #252525;
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                        }
+                    }
                 }
             }
         }

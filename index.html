@@ -87,6 +87,8 @@
             </p>
             <ul class="cards-container">
 
+                <img id="loading" src="./dist//images/loading.gif" alt="Loading icon">
+
 
                 <!-- <li class="card" id="img1">
                     <div class="card-content">
@@ -125,7 +127,7 @@
                     </div>
                     <div class="story-content">
                         <div class="story" id="custom-scrollbar">
-                            <h4 class="story-title">Title</h4>
+                            <h4 class="story-title">Crossing The Dark Woods</h4>
                             <p>
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure neque distinctio illum
                                 inventore, consequuntur laboriosam sit magnam consequatur quae alias ut quasi
@@ -167,12 +169,22 @@
                                 temporibus sint quis nam. Sit inventore praesentium deserunt non!
                             </p>
                         </div>
-                        <audio controls>
+                        <div class="audio-player">
+                            <span id="play"><img class="sound-icon" src="./dist/images/music-play.png" alt="Play audio icon" title="Play"></span>
+                            <div class="slider-container">
+                                <div class="current-time">00:00</div>
+                                <input type="range" min="1" max="100" value="0" class="slider" onchange="seekTo()">
+                                <div class="total-duration">00:00</div>
+                            </div>
+                            <img id="volume" class="sound-icon" src="./dist/images/music-volume.png" alt="Sound volume icon" title="Volume">
+                            <audio src="https://raw.githubusercontent.com/oliveira-victor/api-storage-stories/main/audio/dark-woods.mp3"></audio>
+                        </div>
+                        <!-- <audio controls>
                             <source
                                 src="https://raw.githubusercontent.com/oliveira-victor/api-storage-stories/main/audio/dark-woods.mp3"
                                 type="audio/mpeg">
                             Your browser does not support the audio element.
-                        </audio>
+                        </audio> -->
                     </div>
                 </div>
             </div>
