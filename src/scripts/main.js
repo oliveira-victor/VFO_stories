@@ -59,7 +59,7 @@ function displayCards(stories) {
                         <p id="cardText">
                             ${story.text}
                         </p>
-                        <button class="card-btn">Open</button>
+                        <button class="card-btn" onclick="openStory()">Open</button>
                     </div>
                 </div>
             </li>
@@ -82,3 +82,27 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error('Error fetching the stories', error));
 });
 
+// Modal
+
+const modal = document.querySelector('.modal');
+
+/* closeBtn.addEventListener('click', function() {
+    modal.classList.remove('isVisible')
+}) */
+
+function closeStory() {
+    modal.classList.remove('isVisible');
+    stopAudio()
+}
+
+function openStory() {
+    modal.classList.add('isVisible');
+}
+
+// Audio handler
+
+const audioPlayer = document.querySelector('audio');
+
+function stopAudio() {
+    audioPlayer.pause();
+}

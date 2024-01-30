@@ -1,0 +1,131 @@
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .story-container {
+        background-color: #fff;
+        z-index: 12;
+        max-width: 1024px;
+        width: 100%;
+        height: 600px;
+        display: flex;
+        border-radius: 20px;
+        position: relative;
+
+        .close-btn {
+            cursor: pointer;
+            width: 30px;
+            padding: 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(-16px, 16px);
+            transition: all .2s ease;
+            z-index: 12;
+
+            &:hover {
+                background-color: #e6e6e6;
+                transform: translate(-16px, 16px) scale(1.2);
+            }
+        }
+
+        .story-image {
+
+            img {
+                width: 350px;
+                height: 600px;
+                object-fit: cover;
+                border-radius: 20px 0 0 20px;
+            }
+        }
+
+        .story-content {
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+
+            #custom-scrollbar::-webkit-scrollbar {
+                width: 12px;
+                background-color: #F5F5F5;
+            }
+
+            #custom-scrollbar::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+                background-color: #555;
+            }
+
+            .story {
+                margin-top: 36px;
+                padding: 0 10px;
+                height: 100%;
+                overflow-y: auto;
+                line-height: 1.6;
+
+                .story-title {
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+.isVisible {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .modal {
+
+        .story-container {
+            width: 90%;
+            height: 90%;
+            flex-direction: column;
+
+            .close-btn {
+                background-color: #252525;
+            }
+
+            .story-image {
+
+                img {
+                    width: 100%;
+                    height: 160px;
+                    border-radius: 20px 20px 0 0;
+                }
+            }
+
+            .story-content {
+                height: 80%;
+
+                .story {
+                    line-height: 1.4;
+                    height: 100%;
+                    margin-top: 24px;
+                }
+            }
+        }
+    }
+}

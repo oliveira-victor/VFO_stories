@@ -4,6 +4,8 @@
 @use 'storiesList';
 @use 'fonts';
 @use 'colors';
+@use 'modal';
+@use 'effects';
 
 * {
     margin: 0;
@@ -35,6 +37,7 @@ li {
 .section-title{
     font-size: 44px;
     color: colors.$mainColor;
+    margin-bottom: 20px;
 
     @media (max-width: 767px) {
         text-align: center;
