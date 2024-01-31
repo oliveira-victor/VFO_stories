@@ -158,22 +158,26 @@ function seekTo() {
 function setUpdate() {
     let audioPlayer = document.querySelector('audio');
 
+    let minutes = Math.floor(audioPlayer.duration / 60);
+    let seconds = Math.floor(audioPlayer.duration % 60);
+
+    let formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
+    let formattedSeconds = (seconds < 10)  ? '0' + seconds : seconds;
+
     let seekPosition = 0;
     if (!isNaN(audioPlayer.duration)) {
+
+        totalDuration.innerHTML = formattedMinutes + ':' + formattedSeconds;
+        
         seekPosition = audioPlayer.currentTime * (100 / audioPlayer.duration);
         slider.value = seekPosition;
 
         let currentMinutes = Math.floor(audioPlayer.currentTime / 60);
         let currentSeconds = Math.floor(audioPlayer.currentTime - currentMinutes * 60);
-        let durationMinutes = Math.floor(audioPlayer.duration / 60);
-        let durationSeconds = Math.floor(audioPlayer.duration - durationMinutes * 60);
 
         if (currentSeconds < 10) {currentSeconds = '0' + currentSeconds}
-        if (durationSeconds < 10) {durationSeconds = '0' + durationSeconds}
         if (currentMinutes < 10) {currentMinutes = '0' +  currentMinutes}
-        if (durationMinutes < 10) {durationMinutes = '0' + durationMinutes}
 
         currentTime.textContent = currentMinutes + ':' + currentSeconds;
-        totalDuration.textContent = currentMinutes + ':' + durationSeconds;
     }
 }
