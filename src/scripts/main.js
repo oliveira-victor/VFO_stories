@@ -42,6 +42,8 @@ function originalHeader() {
 
 // API
 
+let storiesList = [];
+
 function displayCards(stories) {
     const storyListElement = document.querySelector('.cards-container')
 
@@ -57,21 +59,43 @@ function displayCards(stories) {
                     </div>
                     <div class="long">
                         <p id="cardText">
-                            ${story.text}
+                            ${story.synopsis}
                         </p>
-                        <button class="card-btn" onclick="openStory()">Open</button>
+                        <button class="card-btn" onclick="openStory(${story.id})">Open</button>
                     </div>
                 </div>
             </li>
         `
 
         function createSummary() {
-            return story.text.slice(0, 90) + '...'
+            return story.synopsis.slice(0, 90) + '...'
         }
 
+        storiesList.push(
+            {
+                title: story.title,
+                text: story.story,
+                audio: story.audio,
+                image: story.image
+            }
+        )
         document.getElementById('loading').style.display = 'none'
         storyListElement.insertAdjacentHTML('beforeend', cardStructure)
     })
+}
+
+function openStory(id) {
+    const modalImage = document.querySelector('.story-image');
+    const modalTitle = document.querySelector('.story-title');
+    const modalText = document.querySelector('.story-text');
+    const modalAudio = document.querySelector('.story-audio');
+
+    modalImage.innerHTML = `<img src="${storiesList[id - 1].image}" alt="">`;
+    modalTitle.innerHTML = storiesList[id - 1].title;
+    modalText.innerHTML = storiesList[id - 1].text;
+    modalAudio.innerHTML = `<audio src="${storiesList[id - 1].audio}"></audio>`;
+
+    modal.classList.add('isVisible');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -92,15 +116,10 @@ function closeStory() {
     stopAudio()
 }
 
-function openStory() {
-    modal.classList.add('isVisible');
-}
-
 // Audio handler
 
 let isPlaying = false;
 
-const audioPlayer = document.querySelector('audio');
 const volumeBtn = document.getElementById('volume');
 
 const slider = document.querySelector('.slider');
@@ -111,14 +130,14 @@ let trackIndex = 0;
 let updateTimer;
 
 function stopAudio() {
-    audioPlayer.pause();
+    document.querySelector('audio').pause();
     isPlaying = false;
     playBtn.innerHTML = '<img class="sound-icon" src="./dist/images/music-play.png" alt="Play audio icon" title="Play">';
 }
 
 function playAudio() {
     updateTimer = setInterval(setUpdate, 1000);
-    audioPlayer.play();
+    document.querySelector('audio').play();
     isPlaying = true;
     playBtn.innerHTML = '<img class="sound-icon" src="./dist/images/music-pause.png" alt="Pause audio icon" title="Pause">';
 }
@@ -130,11 +149,15 @@ playBtn.addEventListener('click', function () {
 })
 
 function seekTo() {
+    let audioPlayer = document.querySelector('audio');
+
     let seekTo = audioPlayer.duration * (slider.value / 100);
     audioPlayer.currentTime = seekTo;
 }
 
 function setUpdate() {
+    let audioPlayer = document.querySelector('audio');
+
     let seekPosition = 0;
     if (!isNaN(audioPlayer.duration)) {
         seekPosition = audioPlayer.currentTime * (100 / audioPlayer.duration);
