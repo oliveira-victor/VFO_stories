@@ -27,7 +27,7 @@ Deploy link: https://vfostories.vercel.app/
 
 2. Navigate to the project directory
    ```bash
-   cd project
+   cd VFO_stories
 
 3. Install dependencies
    ```bash
