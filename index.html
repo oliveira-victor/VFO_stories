@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&family=Short+Stack&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pompiere&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <title>VFO Stories</title>
     <link rel="icon" type="image/svg+xml" href="/favico.svg" />
     <link rel="stylesheet" href="dist/css/main.css">
@@ -27,7 +26,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#about">
                             About
                         </a>
                     </li>
@@ -37,7 +36,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://vfostudio.vercel.app/links.html" target="_blank">
                             Links
                         </a>
                     </li>
@@ -59,7 +58,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#about">
                         <img src="./dist/images/icon-about.svg" alt="About icon">
                         About
                     </a>
@@ -71,7 +70,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="https://vfostudio.vercel.app/links.html" target="_blank">
                         <img src="./dist/images/icon-links.svg" alt="Links icon">
                         Links
                     </a>
@@ -111,10 +110,6 @@
         </section>
         <section id="stories" class="stories-list main-container">
             <h2 class="section-title">Stories</h2>
-            <p>
-                Search through different short stories with audio. Visit magical and enchanted worlds where your
-                imagination flies free. Each story with a beautiful artwork cover.
-            </p>
             <ul class="cards-container">
 
                 <img id="loading" src="./dist//images/loading.gif" alt="Loading icon">
@@ -142,8 +137,6 @@
                         </div>
                     </div>
                 </li> -->
-
-
             </ul>
 
             <div class="modal fadeIn">
@@ -160,7 +153,8 @@
                         </div>
                         <div class="audio-player">
                             <span id="play"><img class="sound-icon" src="./dist/images/music-play.png"
-                                    alt="Play audio icon" title="Play"></span>
+                                    alt="Play audio icon" title="Play">
+                            </span>
                             <div class="slider-container">
                                 <div class="current-time">00:00</div>
                                 <input type="range" min="1" max="100" value="0" class="slider" onchange="seekTo()">
@@ -172,6 +166,16 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <div class="parallax">
+            <img class="upside-down" src="./dist/images/paper.png" alt="Paper">
+            <img class="stick-bottom" src="./dist/images/paper.png" alt="Paper">
+            <div class="gradient"></div>
+        </div>
+        <section id="about" class="about">
+            <div class="main-container">
+                <h2 class="section-title">About</h2>
             </div>
         </section>
     </div>

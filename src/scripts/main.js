@@ -90,9 +90,16 @@ function openStory(id) {
     const modalText = document.querySelector('.story-text');
     const modalAudio = document.querySelector('.story-audio');
 
-    modalImage.innerHTML = `<img src="${storiesList[id - 1].image}" alt="">`;
+    modalText.innerHTML = ""
+    
+    const renderStory = storiesList[id - 1].text.forEach(paragraph => {
+        const createParagraph = `<p>${paragraph}</p><br />`
+
+        modalText.insertAdjacentHTML('beforeend', createParagraph)
+    });
+    
+    modalImage.innerHTML = `<img src="${storiesList[id - 1].image}" alt="Story cover image">`;
     modalTitle.innerHTML = storiesList[id - 1].title;
-    modalText.innerHTML = storiesList[id - 1].text;
     modalAudio.innerHTML = `<audio src="${storiesList[id - 1].audio}"></audio>`;
 
     modal.classList.add('isVisible');

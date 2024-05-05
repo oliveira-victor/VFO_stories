@@ -1,0 +1,27 @@
+@use 'colors';
+
+.divider {
+    background-color: colors.$alternativeBg;
+    position: relative;
+    height: 150px;
+}
+
+.custom-shape-divider-top-1706722159 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1706722159 svg {
+    position: relative;
+    display: block;
+    width: calc(174% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1706722159 .shape-fill {
+    fill: #FFFFFF;
+}

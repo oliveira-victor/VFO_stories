@@ -2,10 +2,13 @@
 @use 'hero';
 @use 'animation';
 @use 'storiesList';
+@use 'parallax';
+@use 'about';
 @use 'fonts';
 @use 'colors';
 @use 'modal';
 @use 'effects';
+@use 'divider';
 
 * {
     margin: 0;
@@ -35,13 +38,16 @@ li {
 }
 
 .section-title{
-    font-size: 44px;
+    font-size: 84px;
     color: colors.$mainColor;
     margin-bottom: 20px;
+    padding-top: 100px;
+    text-align: center;
 
     @media (max-width: 767px) {
         text-align: center;
         font-size: 34px;
+        padding-top: 20px;
     }
 }
 
