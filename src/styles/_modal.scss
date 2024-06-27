@@ -96,7 +96,6 @@
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
-                position: relative;
 
                 .sound-icon {
                     width: 34px;
@@ -136,38 +135,42 @@
                     }
                 }
 
-                .vol-container {
-                    /* display: none; */
-                    background-color: rgba(255, 255, 255, 0.7);
-                    backdrop-filter: blur(2px);
-                    border-radius: 10px 10px 0 0;
-                    padding: 10px 10px 0 10px;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    transform: translate(-20px, -100px);
+                .volume-icon-container {
+                    position: relative;
+                    
+                    .vol-container {
+                        display: none;
+                        background-color: rgba(255, 255, 255, 0.7);
+                        backdrop-filter: blur(2px);
+                        border-radius: 10px 10px 0 0;
+                        padding: 10px 10px 0 10px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        transform: translate(-10px, -100px);
 
-                    #vol {
-                        appearance: none;
-                        -webkit-appearance: none;
-                        width: 4px;
-                        height: 80px;
-                        background-color: #555;
-                        border-radius: 4px;
-                        cursor: pointer;
-
-                        &::-webkit-slider-thumb {
+                        #vol {
+                            appearance: none;
                             -webkit-appearance: none;
-                            background-color: #252525;
-                            width: 12px;
-                            height: 12px;
-                            border-radius: 50%;
+                            width: 4px;
+                            height: 80px;
+                            background-color: #555;
+                            border-radius: 4px;
+                            cursor: pointer;
+
+                            &::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                background-color: #252525;
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 50%;
+                            }
                         }
                     }
-                }
 
-                .show {
-                    display: block;
+                    .show {
+                        display: block;
+                    }
                 }
             }
         }

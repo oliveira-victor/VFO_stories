@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pompiere&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pompiere&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
     <title>VFO Stories</title>
     <link rel="icon" type="image/svg+xml" href="/favico.svg" />
     <link rel="stylesheet" href="dist/css/main.css">
@@ -160,11 +161,14 @@
                                 <input type="range" min="1" max="100" value="0" class="slider" onchange="seekTo()">
                                 <div class="total-duration">00:00</div>
                             </div>
-                            <img id="volume" class="sound-icon" src="./dist/images/music-volume.png"
-                                alt="Sound volume icon" title="Volume">
+                            <div class="volume-icon-container">
+                                <img id="volume" class="sound-icon" src="./dist/images/music-volume.png"
+                                    alt="Sound volume icon" title="Volume">
                                 <div class="vol-container">
-                                    <input id="vol" type="range" min="0" max="100" value="100" style="writing-mode: vertical-lr; direction: rtl">
+                                    <input id="vol" type="range" min="0" max="100" value="100"
+                                        style="writing-mode: vertical-lr; direction: rtl">
                                 </div>
+                            </div>
                             <span class="story-audio"><audio src="#"></audio></span>
                         </div>
                     </div>
