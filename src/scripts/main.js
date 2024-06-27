@@ -155,8 +155,9 @@ const onClickOutside = (element, callback) => {
 };
 
 function closeVol() {
-    /* volContainer.classList.remove('show') */
-    console.log("click")
+    if (!volIsOpen) {
+        volContainer.classList.remove('show')
+    }
     volIsOpen = false
 }
 
