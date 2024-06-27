@@ -91,13 +91,13 @@ function openStory(id) {
     const modalAudio = document.querySelector('.story-audio');
 
     modalText.innerHTML = ""
-    
+
     const renderStory = storiesList[id - 1].text.forEach(paragraph => {
         const createParagraph = `<p>${paragraph}</p><br />`
 
         modalText.insertAdjacentHTML('beforeend', createParagraph)
     });
-    
+
     modalImage.innerHTML = `<img src="${storiesList[id - 1].image}" alt="Story cover image">`;
     modalTitle.innerHTML = storiesList[id - 1].title;
     modalAudio.innerHTML = `<audio src="${storiesList[id - 1].audio}"></audio>`;
@@ -126,8 +126,11 @@ function closeStory() {
 // Audio handler
 
 let isPlaying = false;
+let volIsOpen = false;
 
 const volumeBtn = document.getElementById('volume');
+const volContainer = document.querySelector('.vol-container');
+const vol = document.getElementById('vol');
 
 const slider = document.querySelector('.slider');
 const currentTime = document.querySelector('.current-time');
@@ -135,6 +138,29 @@ const totalDuration = document.querySelector('.total-duration');
 
 let trackIndex = 0;
 let updateTimer;
+
+vol.oninput = function () {
+    document.querySelector('audio').volume = vol.value / 100
+}
+
+volumeBtn.addEventListener('click', function() {
+    volContainer.classList.add('show');
+    volIsOpen = true;
+})
+
+const onClickOutside = (element, callback) => {
+    document.addEventListener('click', e => {
+        if (!element.contains(e.target)) callback();
+    });
+};
+
+function closeVol() {
+    /* volContainer.classList.remove('show') */
+    console.log("click")
+    volIsOpen = false
+}
+
+onClickOutside(volContainer, () => closeVol());
 
 function stopAudio() {
     document.querySelector('audio').pause();
@@ -169,21 +195,21 @@ function setUpdate() {
     let seconds = Math.floor(audioPlayer.duration % 60);
 
     let formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
-    let formattedSeconds = (seconds < 10)  ? '0' + seconds : seconds;
+    let formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
 
     let seekPosition = 0;
     if (!isNaN(audioPlayer.duration)) {
 
         totalDuration.innerHTML = formattedMinutes + ':' + formattedSeconds;
-        
+
         seekPosition = audioPlayer.currentTime * (100 / audioPlayer.duration);
         slider.value = seekPosition;
 
         let currentMinutes = Math.floor(audioPlayer.currentTime / 60);
         let currentSeconds = Math.floor(audioPlayer.currentTime - currentMinutes * 60);
 
-        if (currentSeconds < 10) {currentSeconds = '0' + currentSeconds}
-        if (currentMinutes < 10) {currentMinutes = '0' +  currentMinutes}
+        if (currentSeconds < 10) { currentSeconds = '0' + currentSeconds }
+        if (currentMinutes < 10) { currentMinutes = '0' + currentMinutes }
 
         currentTime.textContent = currentMinutes + ':' + currentSeconds;
     }
