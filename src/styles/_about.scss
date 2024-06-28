@@ -1,4 +1,31 @@
+@use 'fonts';
+
 .about {
     min-height: 100vh;
     background-color: #fff;
+
+    &__intro {
+        width: 100%;
+        position: relative;
+
+        &__image {
+            width: 100%;
+
+            & img {
+                width: 100%;
+            }
+        }
+
+        &__text {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            transform: translateY(80px);
+            font-size: 50px;
+            font-weight: 500;
+            font-family: fonts.$title;
+            line-height: 50px;
+        }
+    }
 }
