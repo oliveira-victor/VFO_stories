@@ -11,6 +11,8 @@
     <title>VFO Stories</title>
     <link rel="icon" type="image/svg+xml" href="/favico.svg" />
     <link rel="stylesheet" href="dist/css/main.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./dist/js/reveal.js" defer></script>
 </head>
 
 <body>
@@ -87,25 +89,25 @@
             <div class="container">
                 <div id="scene">
                     <div class="layer" data-depth="0.1">
-                        <img id="layer1" src="./dist/images/layer1.webp">
+                        <img id="layer1" class="fadeInClouds" src="./dist/images/layer1.webp">
                     </div>
                     <div class="layer" data-depth="0.7">
-                        <img id="layer2" src="./dist/images/layer2.webp">
+                        <img id="layer2" class="revealWhale" src="./dist/images/layer2.webp">
                     </div>
                     <div class="layer" data-depth="0.3">
-                        <img id="layer3" src="./dist/images/layer3.webp">
+                        <img id="layer3" class="fadeInClouds" src="./dist/images/layer3.webp">
                     </div>
                     <div class="layer" data-depth="0.3">
-                        <img id="layer4" src="./dist/images/layer4.webp">
+                        <img id="layer4" class="fadeInClouds" src="./dist/images/layer4.webp">
                     </div>
                     <div class="layer" data-depth="0.2">
-                        <img id="layer5" src="./dist/images/layer5.webp">
+                        <img id="layer5" class="fadeInClouds" src="./dist/images/layer5.webp">
                     </div>
                     <div class="layer" data-depth-x="1">
-                        <img id="layer6" src="./dist/images/layer6.webp">
+                        <img id="layer6" class="revealCloudLeft" src="./dist/images/layer6.webp">
                     </div>
                     <div class="layer" data-depth-x="0.8">
-                        <img id="layer7" src="./dist/images/layer7.webp">
+                        <img id="layer7" class="revealCloudRight" src="./dist/images/layer7.webp">
                     </div>
                 </div>
         </section>
@@ -114,7 +116,6 @@
             <ul class="cards-container">
 
                 <img id="loading" src="./dist//images/loading.gif" alt="Loading icon">
-
 
                 <!-- <li class="card" id="img1">
                     <div class="card-content">
@@ -184,12 +185,12 @@
             <div class="main-container">
                 <h2 class="section-title">About</h2>
                 <div class="about__intro">
-                    <div class="about__intro__image">
+                    <div class="about__intro__image revealMain">
                         <img src="./dist/images/open-book.webp" alt="Open sketchbook">
                     </div>
                     <div class="about__intro__text">
                         <p>
-                            Inspiring illustrations and <br />fantastic stories
+                            Inspiring illustrations and fantastic stories
                         </p>
                     </div>
                 </div>

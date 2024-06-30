@@ -26,6 +26,15 @@
             font-weight: 500;
             font-family: fonts.$title;
             line-height: 50px;
+
+            @media (max-width: 767px) {
+                position: relative;
+                width: 100%;
+                transform: translate(0);
+                font-size: 32px;
+                line-height: 30px;
+                text-align: center;
+            }
         }
     }
 }

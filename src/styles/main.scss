@@ -63,3 +63,15 @@ li {
     width: 90%;
     margin: 0 auto;
 }
+
+.revealMain, .revealWhale, .revealCloudLeft, .revealCloudRight {
+    visibility: hidden;
+}
+
+.fadeInClouds { animation: fadeInClouds 3s; }
+
+@keyframes fadeInClouds {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
