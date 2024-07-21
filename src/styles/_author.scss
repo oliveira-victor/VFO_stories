@@ -3,4 +3,51 @@
 .author {
     min-height: 100vh;
     background-color: colors.$neutral;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+
+        & img {
+            width: 100%;
+        }
+
+        & .avatar1 {
+            margin-top: 60%;
+        }
+        
+        & .avatar2 {
+            margin-top: 10%;
+        }
+
+        & .avatar3 {
+            margin-top: 50%;
+        }
+
+        & .avatar4 {
+            margin-top: 70%;
+        }
+    }
+
+    &__txt {
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: 60px;
+        padding-bottom: 60px;
+        font-size: 20px;
+        line-height: 28px;
+
+        & p {
+            margin-bottom: 24px;
+            color: #000;
+        }
+
+        & a {
+            color: inherit;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }

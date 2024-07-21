@@ -10,6 +10,7 @@
 @use 'modal';
 @use 'effects';
 @use 'divider';
+@use 'scrollReveal';
 
 * {
     margin: 0;
@@ -25,7 +26,10 @@ body {
     font-family: fonts.$text;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: fonts.$title;
     font-weight: lighter;
 }
@@ -38,7 +42,7 @@ li {
     list-style: none;
 }
 
-.section-title{
+.section-title {
     font-size: 84px;
     color: colors.$mainColor;
     margin-bottom: 20px;
@@ -64,14 +68,24 @@ li {
     margin: 0 auto;
 }
 
-.revealMain, .revealWhale, .revealCloudLeft, .revealCloudRight {
-    visibility: hidden;
+.highlight {
+    background-color: #f1e29f;
 }
 
-.fadeInClouds { animation: fadeInClouds 3s; }
+.fadeInClouds {
+    animation: fadeInClouds 3s;
+}
 
 @keyframes fadeInClouds {
-    0% { opacity: 0; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

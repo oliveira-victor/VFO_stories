@@ -31,6 +31,39 @@ window.scrollReveal = ScrollReveal({ reset: false });
         origin: 'right'
     });
 
+    scrollReveal.reveal('.authorImg', {
+        duration: 2000,
+        distance: '100px',
+        origin: 'bottom'
+    });
+
+    scrollReveal.reveal('.avatar1', {
+        duration: 2000,
+        distance: '90px',
+        origin: 'left'
+    });
+
+    scrollReveal.reveal('.avatar2', {
+        duration: 2000,
+        distance: '90px',
+        delay: 500,
+        origin: 'left'
+    });
+
+    scrollReveal.reveal('.avatar3', {
+        duration: 2000,
+        distance: '90px',
+        delay: 300,
+        origin: 'right'
+    });
+
+    scrollReveal.reveal('.avatar4', {
+        duration: 2000,
+        distance: '90px',
+        delay: 600,
+        origin: 'right'
+    });
+
 /* scrollReveal.reveal('.hide', {
     duration: 2000,
     distance: '90px',
