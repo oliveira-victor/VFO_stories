@@ -31,7 +31,7 @@ window.scrollReveal = ScrollReveal({ reset: false });
         origin: 'right'
     });
 
-    scrollReveal.reveal('.authorImg', {
+    scrollReveal.reveal('.revealBottom', {
         duration: 2000,
         distance: '100px',
         origin: 'bottom'

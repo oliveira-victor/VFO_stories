@@ -37,4 +37,27 @@
             }
         }
     }
+
+    &__description {
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: 60px;
+        display: flex;
+        gap: 30px;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .about-img {
+        max-width: 302px;
+        border-radius: 10px;
+    }
+
+    .about-txt {
+        display: flex;
+        align-items: center;
+    }
 }
