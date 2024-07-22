@@ -10,6 +10,29 @@
         margin: 20px 0 60px 0;
     }
 
+    .footer-img {
+        width: 200px;
+        padding-bottom: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-icons-container {
+        margin: 20px 0 30px 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        & .footer-icon {
+            height: 36px;
+            transition: all .3s ease;
+
+            &:hover {
+                transform: translateY(-4px);
+            }
+        }
+    }
+
     @media (max-width: 767px) {
         padding-bottom: 26px;
     }
