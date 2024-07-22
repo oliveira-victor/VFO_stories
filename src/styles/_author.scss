@@ -7,21 +7,26 @@
     &__container {
         display: grid;
         grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+        overflow: hidden;
 
         & img {
             width: 100%;
         }
 
         & .avatar1 {
-            margin-top: 60%;
+            margin-top: 80%;
         }
         
         & .avatar2 {
-            margin-top: 10%;
+            margin-top: 50%;
+
+            @media (max-width: 767px) {
+                margin-top: 80%;
+            }
         }
 
         & .avatar3 {
-            margin-top: 50%;
+            margin-top: 60%;
         }
 
         & .avatar4 {
@@ -34,8 +39,6 @@
         margin: 0 auto;
         margin-top: 60px;
         padding-bottom: 60px;
-        font-size: 20px;
-        line-height: 28px;
 
         & p {
             margin-bottom: 24px;
