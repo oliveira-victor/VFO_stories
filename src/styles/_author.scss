@@ -3,6 +3,14 @@
 .author {
     min-height: 100vh;
     background-color: colors.$neutral;
+    position: relative;
+
+    .author-paper {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
 
     &__container {
         display: grid;
@@ -38,6 +46,7 @@
         max-width: 1000px;
         margin: 0 auto;
         margin-top: 60px;
+        padding-bottom: 60px;
 
         & p {
             margin-bottom: 24px;
